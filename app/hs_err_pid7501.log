@@ -1,0 +1,41 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 88080384 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2827), pid=7501, tid=140226000799488
+#
+# JRE version: OpenJDK Runtime Environment (7.0_91-b02) (build 1.7.0_91-b02)
+# Java VM: OpenJDK 64-Bit Server VM (24.91-b01 mixed mode linux-amd64 compressed oops)
+# Derivative: IcedTea 2.6.3
+# Distribution: Ubuntu 15.10, package 7u91-2.6.3-0ubuntu0.15.10.1
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f88e4076000):  VMThread [stack: 0x00007f88e8e74000,0x00007f88e8f75000] [id=7511]
+
+Stack: [0x00007f88e8e74000,0x00007f88e8f75000],  sp=0x00007f88e8f734f0,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x9948f3]  VMError::report_and_die()+0x183
+V  [libjvm.so+0x48a9df]  report_vm_out_of_memory(char const*, int, unsigned long, char const*)+0x8f
+V  [libjvm.so+0x80143b]  os::pd_commit_memory(char*, unsigned long, unsigned long, bool)+0xeb
+V  [libjvm.so+0x7fb82e]  os::commit_memory(char*, unsigned long, unsigned long, bool)+0x2e
+V  [libjvm.so+0x871c4b]  PSVirtualSpace::expand_by(unsigned long)+0x5b
+V  [libjvm.so+0x873593]  PSYoungGen::resize(unsigned long, unsigned long)+0x103
+V  [libjvm.so+0x86f818]  PSScavenge::invoke_no_policy()+0x14b8
+V  [libjvm.so+0x86fafc]  PSScavenge::invoke()+0x4c
+V  [libjvm.so+0x824df3]
